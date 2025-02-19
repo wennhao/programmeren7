@@ -1,7 +1,5 @@
-{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
-{-# HLINT ignore "Redundant bracket" #-}
-module Opdracht1
-where     
+module Opdracht1 where
+import Data.Bits  
 -- opdr1a
 faca :: Int -> Int
 faca 0 = 1                    
@@ -39,3 +37,26 @@ dobbel3n n = [(x, y, z) | x <- [1..6], y <- [1..6], z <- [1..6], (x + y + z) `mo
 -- opdr3
 puzzel :: [(Integer, Integer, Integer)]
 puzzel = [(a,b,c) | a <- [-100..100], b <- [-100..100], c <- [-100..100], a == 2 * (b - c), b == a * c ,c * 2 == a + c] 
+
+-- opdr4a
+mult :: Integer -> Integer -> Integer
+mult x 0 = 0
+mult x y = x + mult x (y -1 )
+
+{-
+ghci> mult 999999999 99930819041
+*** Exception: stack overflow
+-}
+
+-- opdr4b
+fastmult :: Integer -> Integer -> Integer
+fastmult x y
+    | y == 0 = 0
+    | even y = c
+    | otherwise = x + c
+    where c = fastmult (shiftL x 1) (shiftR y 1)
+
+{-
+ghci> fastmult 999999999 99930819041
+99930818941069180959
+-}
