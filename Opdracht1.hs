@@ -28,6 +28,7 @@ nulpuntenb a b c
         x1 = (-b + sqrt(discriminant)) / (2 * a)
         x2 = (-b - sqrt(discriminant)) / (2 * a)
 
+<<<<<<< Updated upstream
 -- opdr2c
 dobbel3 :: [(Integer, Integer, Integer)]
 dobbel3 = [(x, y, z) | x <- [1..6], y <-[1..6], z <- [1..6], (x + y + z) `mod` 5 == 0] 
@@ -37,3 +38,14 @@ dobbel3n :: Integer -> [(Integer, Integer, Integer)]
 dobbel3n n = [(x, y, z) | x <- [1..6], y <- [1..6], z <- [1..6], (x + y + z) `mod` n == 0] 
 
 --opdr3
+=======
+dobbel2 :: [[Int]]
+dobbel2 = [[x, y]| x<-[1..6], y<-[1..6]] -- opdr2C
+dobbel3 :: [[Int]]
+dobbel3 = [[x, y, x+y]| x<-[1..6], y<-[1..6]]
+
+
+-- opdr3
+puzzel :: [(Integer, Integer, Integer)]
+puzzel = [(a,b,c)|a<-[-100..100],b<-[-100..100],c<-[-100..100],a==2*(b-c),b==a*c,c*2==a+c] 
+>>>>>>> Stashed changes
