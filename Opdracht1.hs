@@ -36,6 +36,12 @@ dobbel3 = [(x, y, z) | x <- [1..6], y <-[1..6], z <- [1..6], (x + y + z) `mod` 5
 dobbel3n :: Integer -> [(Integer, Integer, Integer)]
 dobbel3n n = [(x, y, z) | x <- [1..6], y <- [1..6], z <- [1..6], (x + y + z) `mod` n == 0] 
 
+<<<<<<< Updated upstream
 -- opdr3
 puzzel :: [(Integer, Integer, Integer)]
 puzzel = [(a,b,c)|a<-[-100..100],b<-[-100..100],c<-[-100..100],a==2*(b-c),b==a*c,c*2==a+c] 
+=======
+--opdr3
+puzzle :: [(Integer, Integer, Integer)]
+puzzle = [(a,b,c)|a<-[-100..100],b<-[-100..100],c<-[-100..100],a==2*(b-c),b==a*c,c*2==a+c] 
+>>>>>>> Stashed changes
