@@ -30,7 +30,7 @@ nulpuntenb a b c
 dobbel3 :: [(Integer, Integer, Integer)]
 dobbel3 = [(x, y, z) | x <- [1..6], y <-[1..6], z <- [1..6], (x + y + z) `mod` 5 == 0] 
 
---opdr2d
+-- opdr2d
 dobbel3n :: Integer -> [(Integer, Integer, Integer)]
 dobbel3n n = [(x, y, z) | x <- [1..6], y <- [1..6], z <- [1..6], (x + y + z) `mod` n == 0] 
 
@@ -60,3 +60,10 @@ fastmult x y
 ghci> fastmult 999999999 99930819041
 99930818941069180959
 -}
+
+-- opdr5a
+pow :: Integer -> Integer -> Integer
+pow x 0 = 1
+pow x p = x * pow x (p-1)
+
+-- opdr5b
