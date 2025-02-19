@@ -10,4 +10,5 @@ facb x
     | x > 0 = x * facb(x-1)
     | otherwise = error "Negative number"
 
--- this is test this is a test
+dobbel2 = [[x,y]|x<-[1..6],y<-[1..6]]
+dobbel3 = [[x,y,x+y]|x<-[1..6],y<-[1..6]]
