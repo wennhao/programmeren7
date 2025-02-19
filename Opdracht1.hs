@@ -26,5 +26,7 @@ nulpuntenb a b c
         x1 = (-b + sqrt(discriminant)) / (2 * a)
         x2 = (-b - sqrt(discriminant)) / (2 * a)
 
+dobbel2 :: [[Int]]
 dobbel2 = [[x,y]|x<-[1..6],y<-[1..6]] -- opdr2C
+dobbel3 :: [[Int]]
 dobbel3 = [[x,y,x+y]|x<-[1..6],y<-[1..6]]
