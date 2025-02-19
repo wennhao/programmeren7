@@ -66,4 +66,19 @@ pow :: Integer -> Integer -> Integer
 pow x 0 = 1
 pow x p = x * pow x (p-1)
 
+{- 
+ghci>  pow 1000 999
+*** Exception: stack overflow
+-}
+
 -- opdr5b
+fastpow :: Integer -> Integer -> Integer
+fastpow x p
+  | p == 0 = 1
+  | even p = c
+  | otherwise = x * c
+  where c = fastpow (x * x) (shiftR p 1)
+{-
+ghci> fastpow 1000 999
+werkt wel, laat zien
+-}
