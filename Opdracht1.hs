@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+{-# HLINT ignore "Redundant bracket" #-}
 module Opdracht1
 where     
 -- opdr1a
@@ -22,11 +24,16 @@ nulpuntenb a b c
     | discriminant == 0 = [x1]
     | otherwise = []
     where
-        discriminant = b^2 - 4*a*c
+        discriminant = b^2 - 4 * a * c
         x1 = (-b + sqrt(discriminant)) / (2 * a)
         x2 = (-b - sqrt(discriminant)) / (2 * a)
 
-dobbel2 :: [[Int]]
-dobbel2 = [[x,y]|x<-[1..6],y<-[1..6]] -- opdr2C
-dobbel3 :: [[Int]]
-dobbel3 = [[x,y,x+y]|x<-[1..6],y<-[1..6]]
+-- opdr2c
+dobbel3 :: [(Integer, Integer, Integer)]
+dobbel3 = [(x, y, z) | x <- [1..6], y <-[1..6], z <- [1..6], (x + y + z) `mod` 5 == 0] 
+
+--opdr2d
+dobbel3n :: Integer -> [(Integer, Integer, Integer)]
+dobbel3n n = [(x, y, z) | x <- [1..6], y <- [1..6], z <- [1..6], (x + y + z) `mod` n == 0] 
+
+--opdr3
