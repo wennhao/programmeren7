@@ -38,4 +38,4 @@ dobbel3n n = [(x, y, z) | x <- [1..6], y <- [1..6], z <- [1..6], (x + y + z) `mo
 
 -- opdr3
 puzzel :: [(Integer, Integer, Integer)]
-puzzel = [(a,b,c)|a<-[-100..100],b<-[-100..100],c<-[-100..100],a==2*(b-c),b==a*c,c*2==a+c] 
+puzzel = [(a,b,c) | a <- [-100..100], b <- [-100..100], c <- [-100..100], a == 2 * (b - c), b == a * c ,c * 2 == a + c] 
