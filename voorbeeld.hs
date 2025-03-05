@@ -1,5 +1,6 @@
-module Voorbeeld
-where
+module Voorbeeld where 
+import Data.List
+
 square x = x*x
 deel x y = div x y
 som x y = x+y
