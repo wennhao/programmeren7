@@ -1,5 +1,6 @@
 module Opdracht1 where
-import Data.Bits  
+import Data.Bits
+
 -- opdr1a
 faca :: Int -> Int
 faca 0 = 1                    
