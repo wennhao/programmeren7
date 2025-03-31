@@ -1,4 +1,4 @@
-voor opdracht 2 gebruik ik de volgende formule:
+voor opdracht 2 gebruiken wij de volgende formules:
   -voor de differentiequotiënt: f ′(x)≈ (f(x+p)−f(x))/p
 ​  -voor de  Riemannintegratie: ∫ abf(x)dx≈ x=a∑b−pf(x)⋅p
 
