@@ -34,10 +34,10 @@ classifyRoll dice
   | otherwise                 = "Bust"               -- geen van bovenstaande
   where counts = diceCounts dice
 
-allRolls :: [[Int]]
-allRolls = [ [a, b, c, d, e] | a <- [1..6],
-                               b <- [1..6],
-                               c <- [1..6],
-                               d <- [1..6],
-                               e <- [1..6] ]
+-- allRolls :: [[Int]]
+-- allRolls = [ [a, b, c, d, e] | a <- [1..6],
+--                                b <- [1..6],
+--                                c <- [1..6],
+--                                d <- [1..6],
+--                                e <- [1..6] ]
 
