@@ -1,4 +1,4 @@
-module Opdr2 where
+module Opdracht2 where
 import Data.List
 
 -- opdr1a
