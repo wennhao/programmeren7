@@ -3,7 +3,7 @@ import Data.List
 
 -- opdr1a
 differentieer :: (Double -> Double) -> Double -> Double -> Double
-differentieer f p x = (f (x + p) - f (x - p)) / (2 * p)
+differentieer f p x = (f (x+p) - f x ) / p
 
 -- opdr1b
 integreer :: (Double -> Double) -> Double -> Double -> Double -> Double
@@ -14,6 +14,7 @@ dubbelen :: Eq a => [a] -> [a]
 dubbelen s = nub (s \\ nub s)
 
 -- opdr3
+<<<<<<< Updated upstream
 allPossibilities :: [[Integer]]
 allPossibilities =  [[a,b,c,d,e]|a<-[1..6],b<-[1..6],c<-[1..6],d<-[1..6],e<-[1..6]]
 
@@ -38,3 +39,6 @@ twoPair list = filter (\x -> length (filterIndices x 2) == 2) list
 onePair list = filter (\x -> length (filterIndices x 2) == 1 && length (filterIndices x 3) == 0) list
 straight list = filter straightFilter list
 bust list = filter (\x -> length ((poker [x]) ++ (fourOfAKind [x]) ++ (threeOfAKind [x]) ++ (fullHouse [x]) ++ (twoPair [x]) ++ (onePair [x]) ++ (straight [x])) == 0) list
+=======
+-- worpen :: [Int] -> [Int]
+>>>>>>> Stashed changes
