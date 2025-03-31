@@ -2,7 +2,6 @@ module Opdracht3 where
 import Data.Bits
 import Data.Char
 import Data.List
-import GHC.Exts.Heap (GenClosure(key))
 import Debug.Trace (trace)
 
 
