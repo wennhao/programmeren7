@@ -49,7 +49,7 @@ ints2string = map chr
 pad :: Int -> [Int] -> [Int]
 pad n xs = 
     let r = length xs `mod` n
-    in if r == 0 then xs else xs ++ replicate (n - r) 0
+    in if r == 0 then xs else xs ++ replicate (n - r) 32
 
 -- hack 4 [1,2,3,4,5,6,7,8,9,10,11,12]
 -- [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
