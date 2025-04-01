@@ -11,19 +11,28 @@ Opdracht 1
 Teststrings
 -}
 t1 :: String
-t1 = "Hello world!"
+t1 = "aardappelkop"
 
 t2 :: String
-t2 = "Hello world! I am the world!"
+t2 = "aardappelkop is een soort aardappel"
 
 t3 :: String
-t3 = "Hello world! I am the world! I love Haskell"
+t3 = "aardappelkop is een soort aardappel met een lange naam"
 
 testKey :: String
 testKey = "verysecretkeybro" --key moet 16 karakters lang zijn
 
 intKey :: Key
 intKey = string2ints testKey
+
+testBlock :: Block
+testBlock =
+    [
+        [1, 2, 3, 4],
+        [5, 6, 7, 8],
+        [9, 10, 11, 12],
+        [13, 14, 15, 16] 
+    ]
 
 {-
 Opdracht 2
@@ -70,13 +79,6 @@ blocks2string blocks =
         result = ints2string flatList
     in result
 
-testBlock :: Block
-testBlock =
-    [ [1, 2, 3, 4]  -- Row 1 (unchanged)
-    , [5, 6, 7, 8]  -- Row 2 (rotate by 1)
-    , [9, 10, 11, 12] -- Row 3 (rotate by 2)
-    , [13, 14, 15, 16] -- Row 4 (rotate by 3)
-    ]
 
 {-
 Opdracht 3
@@ -215,22 +217,22 @@ encryptrounds key block =
 decryptrounds :: Key -> Block -> Block
 decryptrounds key block =
     let roundKeys = reverse (genroundkeys key 10)
-    in foldl (\acc key -> decryptround acc key) block roundKeys
+    in foldl decryptround block roundKeys
 
 encrypt :: String -> String -> String
 encrypt message key = 
     let keyInts = string2ints key
-        blocks  = string2blocks message
-        enc     = map (encryptrounds keyInts) blocks
-    in blocks2string enc
+        blocks = string2blocks message
+        encryptedMessage = map (encryptrounds keyInts) blocks
+    in blocks2string encryptedMessage
 
 
 decrypt :: String -> String -> String
 decrypt message key = 
     let keyInts = string2ints key
         blocks  = string2blocks message
-        dec     = map (decryptrounds keyInts) blocks
-    in blocks2string dec
+        decryptedMessage = map (decryptrounds keyInts) blocks
+    in blocks2string decryptedMessage
 
 
 {-
