@@ -48,7 +48,7 @@ ints2string = map chr
 -- [1,2,3,4,5,6,7,0,0,0]
 pad :: Int -> [Int] -> [Int]
 pad n xs = 
-    let r = length xs `mod` n
+    let  r = length xs `mod` n
     in if r == 0 then xs else xs ++ replicate (n - r) 32
 
 -- hack 4 [1,2,3,4,5,6,7,8,9,10,11,12]
@@ -67,17 +67,14 @@ string2blocks :: String -> [Block]
 string2blocks input =
     let intList = string2ints input 
         padList = pad 16 intList
-        blocks = hack 4 padList
-    in [blocks]
+        blocks = hack 16 padList
+    in map (hack 4) blocks
 
 -- Converteer Blocks terug naar een String
 -- unblocked = blocks2string blocked
 -- unblocked
 blocks2string :: [Block] -> String
-blocks2string blocks =
-    let flatList = concatMap concat blocks
-        result = ints2string flatList
-    in result
+blocks2string = ints2string . concatMap concat
 
 
 {-
@@ -167,7 +164,7 @@ invvigenere :: [Int] -> [Int] -> [Int]
 invvigenere key message = zipWith (-) message (cycle key)
 
 -- voert vigenere uit op een blok
--- vigenereblock [1,2,3,4] tkey
+-- vblock = vigenereblock testBlock intKey
 vigenereblock :: Block -> Key -> Block
 vigenereblock block key = 
     let flatBlock = concat block -- maak er een lijst van
@@ -177,7 +174,7 @@ vigenereblock block key =
     in newBlock
 
 -- de inverse van vigenereblock
--- invvigenereblock [1,2,3,4] [5,6,7,8]
+-- invblock = invvigenereblock vblock intKey
 invvigenereblock :: Block -> Key -> Block
 invvigenereblock block key =
     let flatBlock = concat block -- maak er een lijst van
