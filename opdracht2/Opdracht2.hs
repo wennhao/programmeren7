@@ -18,11 +18,11 @@ integreer f a b p = sum [ f x * p | x <- [a, a + p .. b - p] ]
 dubbelen :: Eq a => [a] -> [a]
 dubbelen s = nub (s \\ nub s)
 
+
 {-
 Opdracht 3 Poker
 bepaal de kans van elk hand van alle mogelijke worpen
 -}
-
 -- telt het aantal keren dat elk getal voorkomt in de worp
 diceCounts :: [Int] -> [Int]
 diceCounts dice = map length (group (sort dice))
