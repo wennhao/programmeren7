@@ -74,7 +74,9 @@ string2blocks input =
 -- unblocked = blocks2string blocked
 -- unblocked
 blocks2string :: [Block] -> String
-blocks2string = ints2string . concatMap concat
+blocks2string blocks = 
+    let flatList = concatMap concat blocks
+    in ints2string flatList
 
 
 {-
@@ -114,6 +116,7 @@ rotblockbycolumn block = transpose (rotblock (transpose block))
 
 invrotblockbycolumn :: Block -> Block
 invrotblockbycolumn block = transpose (invrotblock (transpose block))
+
 
 {-
 Opdracht 4
@@ -182,7 +185,6 @@ invvigenereblock block key =
         invVigenereList = invvigenere keyCycle flatBlock -- herhaal elk block element met de key
         newBlock = hack 4 invVigenereList -- maak er weer een blok van
     in newBlock
-
 
 
 
